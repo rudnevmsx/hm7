@@ -2,6 +2,12 @@ package ru.rudnev.test.java;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Human human = new Human("John");
+        Car car = new Car(100);
+        human.usedTransport(car);
+        human.move(Terrain.FOREST);
     }
+
+
+
 }
