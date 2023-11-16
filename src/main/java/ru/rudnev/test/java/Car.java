@@ -8,15 +8,17 @@ public class Car implements Transport {
     }
     @Override
     public boolean drive(Terrain terrain){
-        if (terrain.equals(Terrain.FOREST) || terrain.equals(Terrain.SWAMP)){
+        if (terrain == Terrain.FOREST || terrain == Terrain.SWAMP){
             System.out.println("Car can't drive at this type of terrain!");
             return false;
         }
-        else {
-            this.fuel = fuel - 10;
-            return true;
+        if (fuel - 10 < 0){
+            return false;
         }
+        fuel -= 10;
+        return true;
     }
+
 
     @Override
     public String toString() {

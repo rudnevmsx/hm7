@@ -9,15 +9,15 @@ public class Horse implements Transport {
 
     @Override
     public boolean drive(Terrain terrain){
-        if (terrain.equals(Terrain.SWAMP)){
+        if (terrain == Terrain.SWAMP){
             System.out.println("Horse can't move at this type of terrain!");
             return false;
         }
-        else {
-            this.stamina = stamina - 10;
-            System.out.println("Done");
-            return true;
+        if (stamina - 10 < 0) {
+            return false;
         }
+        stamina -= 10;
+        return true;
     }
 
     @Override

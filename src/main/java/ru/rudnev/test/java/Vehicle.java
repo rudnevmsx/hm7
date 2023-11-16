@@ -9,7 +9,10 @@ public class Vehicle implements Transport {
 
     @Override
     public boolean drive(Terrain terrain){
-        this.fuel = fuel - 10;
+        if (fuel - 10 < 0){
+            return false;
+        }
+        fuel -= 10;
         return true;
     }
 

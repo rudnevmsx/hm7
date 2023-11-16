@@ -3,8 +3,8 @@ package ru.rudnev.test.java;
 public class Bike implements Transport {
     @Override
     public boolean drive(Terrain terrain){
-        if (terrain.equals(Terrain.SWAMP)){
-            System.out.println("Horse can't move at this type of terrain!");
+        if (terrain == Terrain.SWAMP){
+            System.out.println("Bike can't move at this type of terrain!");
             return false;
         }
         else {
